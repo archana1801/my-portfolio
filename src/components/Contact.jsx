@@ -311,6 +311,36 @@ export default function Contact() {
                 </div>
               </div>
 
+              {/* Portfolio Link */}
+              <a 
+                href="https://archana1801.github.io/my-portfolio/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="glass-panel" 
+                style={{ 
+                  padding: '1rem 1.5rem', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  gap: '1rem',
+                  textDecoration: 'none',
+                  border: '1px solid var(--color-border)',
+                  cursor: 'pointer',
+                  transition: 'border-color 0.2s ease, box-shadow 0.2s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = 'var(--color-accent-cyan)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = 'var(--color-border)';
+                }}
+              >
+                <Terminal size={16} style={{ color: 'var(--color-accent-gold)' }} />
+                <div>
+                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.58rem', opacity: 0.5 }}>PORTFOLIO_PORT</div>
+                  <div style={{ fontSize: '0.88rem', color: 'var(--color-text-header)', fontWeight: 500 }}>archana1801.github.io/my-portfolio</div>
+                </div>
+              </a>
+
               {/* Social links row */}
               <div style={{ display: 'flex', gap: '1rem', marginTop: '0.5rem' }}>
                 <a
