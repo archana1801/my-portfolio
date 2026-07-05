@@ -1,0 +1,377 @@
+/* -------------------------------------------------------------
+ * Custom Design System: Editorial Sci-Fi HUD
+ * ------------------------------------------------------------- */
+
+:root {
+  /* Common typography and settings */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-medium: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  
+  /* Theme Variables - Default Dark Mode */
+  --color-bg: #07070a;
+  --color-bg-rgb: 7, 7, 10;
+  --color-text: rgba(255, 255, 255, 0.65);
+  --color-text-header: #ffffff;
+  --color-accent-cyan: #00f2fe;
+  --color-accent-cyan-rgb: 0, 242, 254;
+  --color-accent-gold: #f5ca40;
+  --color-accent-gold-rgb: 245, 202, 64;
+  --color-accent-purple: #ab7eff;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-glow: rgba(0, 242, 254, 0.2);
+  --color-card-bg: rgba(12, 12, 18, 0.65);
+  --color-card-hover-bg: rgba(20, 20, 28, 0.8);
+  
+  --grid-line-color: rgba(255, 255, 255, 0.03);
+  --selection-bg: rgba(0, 242, 254, 0.15);
+  --selection-color: #ffffff;
+  
+  /* UI Shadows */
+  --shadow-hud: 0 0 20px rgba(0, 242, 254, 0.05);
+  --shadow-card: 0 10px 30px -15px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 15px rgba(0, 242, 254, 0.15);
+}
+
+/* Light Theme Variables */
+:root[data-theme="light"] {
+  --color-bg: #fafafc;
+  --color-bg-rgb: 250, 250, 252;
+  --color-text: rgba(30, 41, 59, 0.8);
+  --color-text-header: #0f172a;
+  --color-accent-cyan: #0284c7;
+  --color-accent-cyan-rgb: 2, 132, 199;
+  --color-accent-gold: #b45309;
+  --color-accent-gold-rgb: 180, 83, 9;
+  --color-accent-purple: #7c3aed;
+  --color-border: rgba(15, 23, 42, 0.08);
+  --color-border-glow: rgba(2, 132, 199, 0.15);
+  --color-card-bg: rgba(255, 255, 255, 0.8);
+  --color-card-hover-bg: rgba(255, 255, 255, 0.95);
+  
+  --grid-line-color: rgba(15, 23, 42, 0.02);
+  --selection-bg: rgba(2, 132, 199, 0.15);
+  --selection-color: #0f172a;
+  
+  --shadow-hud: 0 0 20px rgba(15, 23, 42, 0.05);
+  --shadow-card: 0 10px 30px -15px rgba(15, 23, 42, 0.1);
+  --shadow-glow: 0 0 10px rgba(2, 132, 199, 0.1);
+}
+
+/* -------------------------------------------------------------
+ * Reset & Base HTML Styles
+ * ------------------------------------------------------------- */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: var(--color-bg);
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  transition: background-color var(--transition-slow), color var(--transition-medium);
+}
+
+::selection {
+  background-color: var(--selection-bg);
+  color: var(--selection-color);
+}
+
+/* Hide default cursor on desktop since we use custom cursor */
+@media (hover: hover) and (pointer: fine) {
+  body, a, button, input, textarea, select {
+    cursor: none !important;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-cyan);
+}
+
+/* -------------------------------------------------------------
+ * Layout Structure
+ * ------------------------------------------------------------- */
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4vw;
+  position: relative;
+  z-index: 2;
+}
+
+/* -------------------------------------------------------------
+ * Typography
+ * ------------------------------------------------------------- */
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-serif);
+  color: var(--color-text-header);
+  line-height: 1.1;
+  font-weight: 700;
+  transition: color var(--transition-medium);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  margin-bottom: 2rem;
+  letter-spacing: -0.01em;
+}
+
+p {
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  font-weight: 300;
+}
+
+.mono-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--color-accent-cyan);
+}
+
+.editorial-number {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-style: italic;
+  opacity: 0.15;
+  line-height: 1;
+}
+
+/* -------------------------------------------------------------
+ * Reusable Components & Utilities
+ * ------------------------------------------------------------- */
+
+.glass-panel {
+  background: var(--color-card-bg);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  box-shadow: var(--shadow-card);
+  transition: border-color var(--transition-medium), background var(--transition-medium), transform var(--transition-medium);
+}
+
+.glass-panel:hover {
+  border-color: var(--color-border-glow);
+  background: var(--color-card-hover-bg);
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-text-header);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 99px;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.btn-primary:hover {
+  border-color: var(--color-accent-cyan);
+  color: var(--color-accent-cyan);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-text);
+  background: transparent;
+  border: none;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.btn-secondary:hover {
+  color: var(--color-accent-cyan);
+}
+
+/* Tech Badges */
+.badge {
+  display: inline-flex;
+  padding: 0.25rem 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  background: rgba(var(--color-accent-cyan-rgb), 0.06);
+  border: 1px solid rgba(var(--color-accent-cyan-rgb), 0.12);
+  color: var(--color-accent-cyan);
+  border-radius: 4px;
+}
+
+.badge-gold {
+  background: rgba(var(--color-accent-gold-rgb), 0.06);
+  border: 1px solid rgba(var(--color-accent-gold-rgb), 0.12);
+  color: var(--color-accent-gold);
+}
+
+/* -------------------------------------------------------------
+ * Custom Grid Layout background (Simulated HUD Overlay)
+ * ------------------------------------------------------------- */
+
+.hud-grid-lines {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: 
+    linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 1;
+}
+
+/* Glow lines */
+.hud-border-glow-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-accent-cyan), transparent);
+  opacity: 0.4;
+  z-index: 100;
+}
+
+/* Section Container */
+section {
+  padding: 4.25rem 0;
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+}
+
+section:last-of-type {
+  border-bottom: none;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2.25rem;
+}
+
+.section-header .line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-border), transparent);
+}
+
+/* -------------------------------------------------------------
+ * Keyframe Animations
+ * ------------------------------------------------------------- */
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.4;
+    box-shadow: 0 0 10px rgba(var(--color-accent-cyan-rgb), 0.1);
+  }
+  50% {
+    opacity: 0.9;
+    box-shadow: 0 0 20px rgba(var(--color-accent-cyan-rgb), 0.4);
+  }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+.glow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent-cyan);
+  display: inline-block;
+  animation: pulse-glow 2s infinite;
+}
+
+.glow-dot.gold {
+  background: var(--color-accent-gold);
+  animation: pulse-glow 2s infinite 0.5s;
+}
+
+/* CRT scanline effect on overlay */
+.scanline-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.15;
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+  section {
+    padding: 2.5rem 0;
+  }
+  .app-container {
+    padding: 0 6vw;
+  }
+}
