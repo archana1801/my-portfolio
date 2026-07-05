@@ -53,7 +53,8 @@ export default function Hero() {
   }, []);
 
   const playVoiceIntro = () => {
-    const audio = new Audio('/intro.aac');
+    const baseUrl = import.meta.env.BASE_URL;
+    const audio = new Audio(`${baseUrl}intro.aac`);
     audio.volume = 0.8;
     audio.play()
       .then(() => {
@@ -62,7 +63,7 @@ export default function Hero() {
         }
       })
       .catch(() => {
-        const audioM4a = new Audio('/intro.m4a');
+        const audioM4a = new Audio(`${baseUrl}intro.m4a`);
         audioM4a.volume = 0.8;
         audioM4a.play()
           .then(() => {
@@ -71,7 +72,7 @@ export default function Hero() {
             }
           })
           .catch(() => {
-            const audioMp3 = new Audio('/intro.mp3');
+            const audioMp3 = new Audio(`${baseUrl}intro.mp3`);
             audioMp3.volume = 0.8;
             audioMp3.play()
               .then(() => {
@@ -260,7 +261,7 @@ export default function Hero() {
               </a>
 
               <a
-                href="/resume.pdf"
+                href={`${import.meta.env.BASE_URL}resume.pdf`}
                 download="Archana_Kumari_Resume.pdf"
                 className="btn-primary"
                 style={{
@@ -408,7 +409,7 @@ export default function Hero() {
               }}
             >
               <img
-                src="/avatar.jpg"
+                src={`${import.meta.env.BASE_URL}avatar.jpg`}
                 alt="Archana Kumari"
                 style={{
                   width: '100%',

@@ -280,7 +280,7 @@ export default function Navigation() {
 
         {/* Resume Button */}
         <a
-          href="/resume.pdf"
+          href={`${import.meta.env.BASE_URL}resume.pdf`}
           download="Archana_Kumari_Resume.pdf"
           className="btn-primary"
           style={{
@@ -415,7 +415,7 @@ export default function Navigation() {
             </button>
 
             <a
-              href="/resume.pdf"
+              href={`${import.meta.env.BASE_URL}resume.pdf`}
               download="Archana_Kumari_Resume.pdf"
               className="btn-primary"
               style={{
