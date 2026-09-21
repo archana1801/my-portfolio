@@ -1,71 +1,78 @@
 import React from 'react';
-import { Code2, Monitor, Database, BrainCircuit, Wrench, GraduationCap } from 'lucide-react';
+import { Code2, Monitor, Database, BrainCircuit, Wrench, GraduationCap, Layers } from 'lucide-react';
 
 export default function Skills() {
   const skillCategories = [
     {
-      title: 'Programming Languages',
+      title: 'Languages',
       icon: <Code2 size={16} />,
       color: 'var(--color-accent-cyan)',
       skills: [
         { name: 'Java', level: 90 },
+        { name: 'JavaScript', level: 88 },
         { name: 'Python', level: 85 },
-        { name: 'JavaScript', level: 85 },
-        { name: 'SQL', level: 80 },
-        { name: 'HTML & CSS', level: 92 }
+        { name: 'SQL', level: 82 }
       ]
     },
     {
-      title: 'Frontend Development',
+      title: 'Frontend',
       icon: <Monitor size={16} />,
       color: 'var(--color-accent-gold)',
       skills: [
-        { name: 'React', level: 90 },
-        { name: 'Vite', level: 85 },
-        { name: 'Responsive Web Design', level: 92 },
-        { name: 'Vanilla CSS / HUD styling', level: 88 }
+        { name: 'React.js', level: 90 },
+        { name: 'HTML & CSS', level: 92 },
+        { name: 'Vite', level: 85 }
       ]
     },
     {
-      title: 'Databases & Frameworks',
-      icon: <Database size={16} />,
+      title: 'Backend',
+      icon: <Layers size={16} />,
       color: 'var(--color-accent-cyan)',
       skills: [
-        { name: 'MySQL', level: 85 },
-        { name: 'MongoDB', level: 75 },
-        { name: 'Node.js', level: 75 }
+        { name: 'Node.js', level: 84 },
+        { name: 'Express.js', level: 84 },
+        { name: 'REST APIs', level: 88 },
+        { name: 'JWT Authentication', level: 85 }
       ]
     },
     {
-      title: 'AI, ML & Core CS',
-      icon: <BrainCircuit size={16} />,
+      title: 'Database',
+      icon: <Database size={16} />,
       color: 'var(--color-accent-gold)',
       skills: [
-        { name: 'Machine Learning', level: 80 },
-        { name: 'Deep Learning (CNN)', level: 78 },
-        { name: 'Data Structures & Algorithms', level: 88 },
-        { name: 'Software Engineering', level: 90 }
+        { name: 'MongoDB', level: 84 },
+        { name: 'MySQL', level: 85 }
       ]
     },
     {
-      title: 'Tools & Workflows',
-      icon: <Wrench size={16} />,
+      title: 'AI / ML',
+      icon: <BrainCircuit size={16} />,
       color: 'var(--color-accent-cyan)',
+      skills: [
+        { name: 'Google Gemini API', level: 88 },
+        { name: 'TensorFlow', level: 80 },
+        { name: 'Scikit-learn', level: 82 }
+      ]
+    },
+    {
+      title: 'Tools',
+      icon: <Wrench size={16} />,
+      color: 'var(--color-accent-gold)',
       skills: [
         { name: 'Git & GitHub', level: 90 },
-        { name: 'Postman API Testing', level: 85 },
-        { name: 'AI Automations', level: 80 }
+        { name: 'VS Code', level: 92 }
       ]
     },
     {
-      title: 'Academic Focus & Targets',
+      title: 'Core CS Fundamentals',
       icon: <GraduationCap size={16} />,
-      color: 'var(--color-accent-gold)',
-      isLearning: true,
+      color: 'var(--color-accent-cyan)',
       skills: [
-        { name: 'System Design', status: 'Researching' },
-        { name: 'Backend VPS & Hostinger', status: 'Configuring' },
-        { name: 'Express.js', status: 'In Progress' }
+        { name: 'DSA (Data Structures & Algorithms)', level: 90 },
+        { name: 'OOP (Object-Oriented Programming)', level: 88 },
+        { name: 'DBMS (Database Management)', level: 85 },
+        { name: 'OS (Operating Systems)', level: 82 },
+        { name: 'CN (Computer Networks)', level: 80 }
       ]
     }
   ];
