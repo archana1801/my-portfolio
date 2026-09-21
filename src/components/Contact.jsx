@@ -396,7 +396,7 @@ export default function Contact() {
           opacity: 0.5
         }}
       >
-        <span>© 2026 ARCHANA KUMARI. ALL SYSTEMS NOMINAL.</span>
+        <span>© 2026 ARCHANA. ALL SYSTEMS NOMINAL.</span>
         <span>MADE WITH VANILLA CSS & REACT</span>
       </div>
 

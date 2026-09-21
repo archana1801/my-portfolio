@@ -1,4 +1,4 @@
-# Archana Kumari | Interactive Developer Portfolio
+# Archana | Interactive Developer Portfolio
 
 An interactive, high-end cybernetic HUD (Heads-Up Display) developer portfolio built with **React**, **Vite**, and **Vanilla CSS**. Designed to showcase software engineering projects, AI automations, and frontend expertise.
 

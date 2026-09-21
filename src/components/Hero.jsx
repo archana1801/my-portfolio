@@ -111,7 +111,7 @@ export default function Hero() {
                 marginBottom: '0.25rem'
               }}
             >
-              Archana Kumari
+              Archana
             </h1>
             <h2
               style={{
@@ -346,7 +346,7 @@ export default function Hero() {
             >
               <img
                 src={`${import.meta.env.BASE_URL}avatar.jpg`}
-                alt="Archana Kumari"
+                alt="Archana"
                 style={{
                   width: '100%',
                   height: '100%',
@@ -364,7 +364,7 @@ export default function Hero() {
             {/* Visual Footer */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
               <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.62rem', fontWeight: 'bold', color: 'var(--color-text-header)' }}>
-                ARCHANA_KUMARI.log
+                ARCHANA.log
               </div>
               <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.52rem', opacity: 0.5 }}>
                 LOC: Delhi, IN // MCA_SYS
