@@ -3,13 +3,25 @@ import { Calendar, Briefcase, GraduationCap, ChevronRight } from 'lucide-react';
 
 export default function Experience() {
   const experiences = [
-
+    {
+      type: 'work',
+      role: 'Web Developer Intern',
+      institution: 'Maati Farm — EximHub (A Maati Farm Venture)',
+      duration: 'Jun 2026 – Jul 2026',
+      highlights: [
+        'Developed 4+ production-ready React modules (Home, Certification, Resources, About) for the live ImportWiz platform using React, Vite, JavaScript, HTML, CSS, and Git.',
+        'Contributed to the frontend development of the Jivora platform by building responsive user interfaces, reusable React components, and implementing UI enhancements.',
+        'Enhanced the SoulThread user application by developing Landing and Home Pages, improving responsive UI components, and resolving frontend bugs.',
+        'Built AI-assisted workflows for exporter outreach and lead generation, generating 1200+ qualified B2B leads and assisting with deployment on Hostinger.'
+      ]
+    },
     {
       type: 'education',
       role: 'Master of Computer Applications (MCA)',
       institution: 'Indira Gandhi Delhi Technical University for Women (IGDTUW)',
-      duration: '2024 – 2026',
+      duration: '2025 – 2027',
       highlights: [
+        'Current CGPA: 9.18 / 10',
         'Specializing in Computer Applications, Software Engineering, and Intelligent Systems.',
         'Hands-on labs in Database Management Systems and Software Development practices.'
       ]
@@ -17,10 +29,10 @@ export default function Experience() {
     {
       type: 'education',
       role: 'B.Sc. (Hons) Computer Science',
-      institution: 'Delhi University',
+      institution: 'Indraprastha College for Women (IPCW), University of Delhi',
       duration: '2021 – 2024',
       highlights: [
-        'Graduated with a first-class degree in Computer Science.',
+        'Graduated with CGPA: 7.89 / 10 in Computer Science.',
         'Completed core coursework in Java, Python, C++, Data Structures, Algorithms, and System Architecture.'
       ]
     }

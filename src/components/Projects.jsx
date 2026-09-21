@@ -53,28 +53,41 @@ export default function Projects() {
 
   const engineeringProjects = [
     {
-      name: 'DermaVision AI (Currently Building)',
-      category: 'Deep Learning / AI',
-      description: 'Developing an AI-powered skin disease detection system using Convolutional Neural Networks (CNN) to classify different skin conditions from medical images.',
+      name: 'AI-Powered Interview Preparation Platform',
+      category: 'Full-Stack / AI Platform',
+      description: 'Developed a full-stack AI platform using React, Node.js, Express.js, and MongoDB with secure JWT authentication and REST APIs to deliver comprehensive interview preparation.',
       features: [
-        'Image preprocessing with OpenCV',
-        'CNN-based model trained via TensorFlow & Keras',
-        'Flask web interface for image upload and disease prediction',
-        'Returns confidence score percentages for condition outputs'
+        'Secure JWT authentication & REST API backend architecture',
+        'Resume PDF upload and parsing using Multer',
+        'Integrated Google Gemini API to generate personalized interview performance reports',
+        'Generates technical questions, behavioral questions, skill-gap analysis, and tailored preparation plans'
       ],
-      tech: ['Python', 'TensorFlow', 'Keras', 'CNN', 'OpenCV', 'Flask'],
+      tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'Multer', 'Google Gemini API'],
       link: 'https://github.com/archana1801'
     },
     {
-      name: 'Autism Prediction System',
-      category: 'Machine Learning',
-      description: 'Developed a machine learning model that predicts Autism Spectrum Disorder using supervised learning techniques, including data preprocessing and classification models.',
+      name: 'DermaVision – AI Skin Disease Detection',
+      category: 'Deep Learning / Computer Vision',
+      description: 'Developed a CNN-based skin disease classification system with image preprocessing and data augmentation for improved prediction accuracy.',
       features: [
-        'Supervised learning classification models (Scikit-learn)',
-        'Data cleaning, preprocessing and feature engineering (Pandas, NumPy)',
-        'Exploratory data analysis plots (Matplotlib)'
+        'CNN classification model trained on skin condition dataset',
+        'Image preprocessing and data augmentation using OpenCV and TensorFlow',
+        'Grad-CAM visualization for model explainability and confidence scoring',
+        'Interactive web interface built with Flask'
       ],
-      tech: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Matplotlib'],
+      tech: ['Python', 'TensorFlow', 'OpenCV', 'Flask', 'Grad-CAM', 'CNN'],
+      link: 'https://github.com/archana1801'
+    },
+    {
+      name: 'Machine Learning Based Autism Prediction System',
+      category: 'Machine Learning / Healthcare',
+      description: 'Built a Random Forest model to predict Autism Spectrum Disorder using data preprocessing, feature engineering, and SMOTE for class balancing.',
+      features: [
+        'Supervised learning Random Forest classification model',
+        'Data preprocessing, feature engineering, and SMOTE class balancing',
+        'Evaluated using Accuracy, Precision, Recall, and F1-score metrics'
+      ],
+      tech: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'SMOTE', 'Random Forest'],
       link: 'https://github.com/archana1801'
     },
     {
@@ -87,7 +100,7 @@ export default function Projects() {
         'Real-time nutritional detail displays'
       ],
       tech: ['Java', 'Swing', 'REST API', 'JSON'],
-      link: 'https://github.com/archana1801'
+      link: 'https://github.com/archana1801/Food-Recipe-App'
     }
   ];
 
