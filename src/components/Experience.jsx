@@ -1,6 +1,5 @@
 import React from 'react';
-import { Calendar, Briefcase, GraduationCap, ChevronRight, Volume2 } from 'lucide-react';
-import { speakSection } from '../utils/speak';
+import { Calendar, Briefcase, GraduationCap, ChevronRight } from 'lucide-react';
 
 export default function Experience() {
   const experiences = [
@@ -44,25 +43,7 @@ export default function Experience() {
     <section id="experience">
       <div className="section-header">
         <span className="mono-tag">// 03 // TIMELINE: EXPERIENCE & EDUCATION</span>
-        <button
-          onClick={() => speakSection("Section three: Experience timeline. Details Archana's software developer internship at EximHub, her M C A at Indira Gandhi Delhi Technical University for Women, and her Bachelor of Science in Computer Science from Delhi University.")}
-          style={{
-            background: 'none',
-            border: 'none',
-            color: 'var(--color-accent-cyan)',
-            cursor: 'pointer',
-            padding: '2px',
-            display: 'inline-flex',
-            alignItems: 'center',
-            opacity: 0.7,
-            transition: 'opacity 0.2s'
-          }}
-          onMouseEnter={(e) => e.currentTarget.style.opacity = 1}
-          onMouseLeave={(e) => e.currentTarget.style.opacity = 0.7}
-          title="Play voice summary"
-        >
-          <Volume2 size={13} />
-        </button>
+
         <div className="line" />
       </div>
 

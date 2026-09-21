@@ -1,31 +1,11 @@
 import React from 'react';
-import { User, Code, Database, Brain, Volume2 } from 'lucide-react';
-import { speakSection } from '../utils/speak';
+import { User, Code, Database, Brain } from 'lucide-react';
 
 export default function About() {
   return (
     <section id="about">
       <div className="section-header">
-        <span className="mono-tag">// 00 // ABOUT THE CORE LOGIC</span>
-        <button
-          onClick={() => speakSection("Section zero: About the Core Logic. Archana is a Software Developer pursuing her Master of Computer Applications at Indira Gandhi Delhi Technical University for Women. She works as a Software Developer and AI Automation Intern at EximHub, building React interfaces and AI-assisted automation pipelines.")}
-          style={{
-            background: 'none',
-            border: 'none',
-            color: 'var(--color-accent-cyan)',
-            cursor: 'pointer',
-            padding: '2px',
-            display: 'inline-flex',
-            alignItems: 'center',
-            opacity: 0.7,
-            transition: 'opacity 0.2s'
-          }}
-          onMouseEnter={(e) => e.currentTarget.style.opacity = 1}
-          onMouseLeave={(e) => e.currentTarget.style.opacity = 0.7}
-          title="Play voice summary"
-        >
-          <Volume2 size={13} />
-        </button>
+        <span className="mono-tag">// 00 // ABOUT ARCHANA</span>
         <div className="line" />
       </div>
 
@@ -38,7 +18,7 @@ export default function About() {
           alignItems: 'start'
         }}
       >
-        {/* Left Column: Big Statement */}
+        {/* Left Column: Headline */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
           <h2
             style={{
@@ -51,17 +31,17 @@ export default function About() {
               margin: 0
             }}
           >
-            Developing software that combines <span style={{ fontStyle: 'italic', color: 'var(--color-accent-cyan)' }}>structured code</span> with intelligent automation.
+            Developing full-stack software with <span style={{ fontStyle: 'italic', color: 'var(--color-accent-cyan)' }}>clean code</span> and problem-solving focus.
           </h2>
           <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginTop: '0.5rem' }}>
             <span className="badge" style={{ fontSize: '0.65rem' }}>Software Developer</span>
             <span className="badge" style={{ fontSize: '0.65rem', background: 'rgba(171, 126, 255, 0.06)', border: '1px solid rgba(171, 126, 255, 0.12)', color: 'var(--color-accent-purple)' }}>Full-Stack Developer</span>
-            <span className="badge badge-gold" style={{ fontSize: '0.65rem' }}>AI Automation</span>
+            <span className="badge badge-gold" style={{ fontSize: '0.65rem' }}>DSA & Problem Solving</span>
           </div>
         </div>
 
-        {/* Right Column: Bio Narrative & Core Areas */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+        {/* Right Column: Bio Narrative */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
           <p
             style={{
               fontFamily: 'var(--font-sans)',
@@ -73,8 +53,7 @@ export default function About() {
             }}
           >
             I am a Software Developer currently pursuing my Master of Computer Applications (MCA) at <strong>Indira Gandhi Delhi Technical University for Women (IGDTUW)</strong>. 
-            Alongside my academic studies, I work as a Software Developer & AI Automation Intern at <strong>EximHub</strong>, where I gain practical experience building production web interfaces, 
-            working with backend setups, and configuring automation workflows.
+            Alongside my academic journey, I work as a Software Developer Intern at <strong>EximHub</strong>, where I gain hands-on experience building user-friendly web interfaces and practical software solutions.
           </p>
           <p
             style={{
@@ -86,8 +65,8 @@ export default function About() {
               textAlign: 'justify'
             }}
           >
-            My engineering philosophy centers around clarity and utility: code should exist to solve real problems and simplify manual work. 
-            I enjoy bridging the gap between clean React interfaces and backend data systems, while expanding my knowledge in system design, VPS deployments, and machine learning models.
+            I enjoy transforming ideas into responsive, real-world web applications using <strong>React, Java, Node.js, Express, and MongoDB</strong>. 
+            I consistently practice Data Structures & Algorithms (DSA) every day to strengthen my core fundamentals, writing clean and scalable code as I prepare for Software Development Engineer (SDE) roles.
           </p>
 
           {/* Key pillars */}
@@ -97,23 +76,23 @@ export default function About() {
               display: 'grid',
               gridTemplateColumns: '1fr 1fr',
               gap: '1.5rem',
-              marginTop: '1rem'
+              marginTop: '0.5rem'
             }}
           >
             <div className="glass-panel" style={{ padding: '1.25rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', color: 'var(--color-accent-cyan)' }}>
                 <Code size={14} />
-                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', fontWeight: 'bold' }}>UI ARCHITECTURE</span>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', fontWeight: 'bold' }}>FULL-STACK DEVELOPMENT</span>
               </div>
-              <p style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>Building clean, performance-optimized, and reusable React web interfaces with Vite.</p>
+              <p style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>Building responsive React frontend interfaces and reliable backend services with Java and Node.js.</p>
             </div>
 
             <div className="glass-panel" style={{ padding: '1.25rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', color: 'var(--color-accent-gold)' }}>
                 <Brain size={14} />
-                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', fontWeight: 'bold' }}>INTELLIGENT WORKFLOWS</span>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', fontWeight: 'bold' }}>PROBLEM SOLVING & DSA</span>
               </div>
-              <p style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>Integrating AI-assisted tools and automations to streamline communication and outreach processes.</p>
+              <p style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>Daily practice of algorithmic problem solving and writing clean, efficient code for real applications.</p>
             </div>
           </div>
         </div>

@@ -1,6 +1,5 @@
 import React from 'react';
-import { ExternalLink, Code, Layers, ShieldCheck, Cpu, Volume2 } from 'lucide-react';
-import { speakSection } from '../utils/speak';
+import { ExternalLink, Code, Layers, ShieldCheck, Cpu } from 'lucide-react';
 
 const GithubIcon = ({ size = 18, ...props }) => (
   <svg
@@ -98,25 +97,7 @@ export default function Projects() {
       <section id="client-work">
         <div className="section-header">
           <span className="mono-tag">// 01 // INTERNSHIP DEVELOPMENTS</span>
-          <button
-            onClick={() => speakSection("Section one: Internship Developments. Features ImportWiz, a trade documentation platform, and Namaste Overseas, a custom plush toy manufacturer catalog with three D floating layouts and search query indexing.")}
-            style={{
-              background: 'none',
-              border: 'none',
-              color: 'var(--color-accent-cyan)',
-              cursor: 'pointer',
-              padding: '2px',
-              display: 'inline-flex',
-              alignItems: 'center',
-              opacity: 0.7,
-              transition: 'opacity 0.2s'
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.opacity = 1}
-            onMouseLeave={(e) => e.currentTarget.style.opacity = 0.7}
-            title="Play voice summary"
-          >
-            <Volume2 size={13} />
-          </button>
+
           <div className="line" />
         </div>
 
@@ -220,25 +201,7 @@ export default function Projects() {
       <section id="engineering">
         <div className="section-header">
           <span className="mono-tag">// 02 // PERSONAL PROJECTS</span>
-          <button
-            onClick={() => speakSection("Section two: Personal Projects. Features DermaVision A I, a deep learning skin disease detection C N N, an Autism Spectrum supervised learning classification system, and a Java Swing recipe desktop app.")}
-            style={{
-              background: 'none',
-              border: 'none',
-              color: 'var(--color-accent-cyan)',
-              cursor: 'pointer',
-              padding: '2px',
-              display: 'inline-flex',
-              alignItems: 'center',
-              opacity: 0.7,
-              transition: 'opacity 0.2s'
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.opacity = 1}
-            onMouseLeave={(e) => e.currentTarget.style.opacity = 0.7}
-            title="Play voice summary"
-          >
-            <Volume2 size={13} />
-          </button>
+
           <div className="line" />
         </div>
 

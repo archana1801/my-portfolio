@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Terminal, Mail, Volume2 } from 'lucide-react';
-import { speakSection, playBootChime } from '../utils/speak';
+import { ArrowRight, Terminal, Mail } from 'lucide-react';
+import { speakSection } from '../utils/speak';
 
 const GithubIcon = ({ size = 18, ...props }) => (
   <svg
@@ -52,41 +52,7 @@ export default function Hero() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const playVoiceIntro = () => {
-    const baseUrl = import.meta.env.BASE_URL;
-    const audio = new Audio(`${baseUrl}intro.aac`);
-    audio.volume = 0.8;
-    audio.play()
-      .then(() => {
-        if ('speechSynthesis' in window) {
-          window.speechSynthesis.cancel();
-        }
-      })
-      .catch(() => {
-        const audioM4a = new Audio(`${baseUrl}intro.m4a`);
-        audioM4a.volume = 0.8;
-        audioM4a.play()
-          .then(() => {
-            if ('speechSynthesis' in window) {
-              window.speechSynthesis.cancel();
-            }
-          })
-          .catch(() => {
-            const audioMp3 = new Audio(`${baseUrl}intro.mp3`);
-            audioMp3.volume = 0.8;
-            audioMp3.play()
-              .then(() => {
-                if ('speechSynthesis' in window) {
-                  window.speechSynthesis.cancel();
-                }
-              })
-              .catch(() => {
-                // Fallback to startup synth arpeggio music chime
-                playBootChime();
-              });
-          });
-      });
-  };
+
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -325,14 +291,7 @@ export default function Hero() {
             >
               <span>Personal Projects</span>
             </button>
-            <button
-              onClick={playVoiceIntro}
-              className="btn-secondary"
-              style={{ cursor: 'pointer', borderColor: 'var(--color-accent-gold)', color: 'var(--color-accent-gold)', gap: '0.45rem' }}
-            >
-              <Volume2 size={14} />
-              <span>Voice Intro</span>
-            </button>
+
           </div>
         </div>
 

@@ -1,115 +1,12 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { Sun, Moon, ArrowDownToLine, Menu, X, Volume2, VolumeX } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { Sun, Moon, ArrowDownToLine, Menu, X } from 'lucide-react';
 import { playUiSound } from '../utils/speak';
 
 export default function Navigation() {
   const [theme, setTheme] = useState('dark');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const audioContextRef = useRef(null);
-  const oscillatorsRef = useRef([]);
-  const gainNodeRef = useRef(null);
 
-  const playAmbientSynth = () => {
-    try {
-      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-      const ctx = new AudioContextClass();
-      audioContextRef.current = ctx;
 
-      const masterGain = ctx.createGain();
-      masterGain.gain.setValueAtTime(0.0, ctx.currentTime);
-      masterGain.gain.linearRampToValueAtTime(0.12, ctx.currentTime + 2.5);
-      gainNodeRef.current = masterGain;
-
-      const filter = ctx.createBiquadFilter();
-      filter.type = 'lowpass';
-      filter.frequency.setValueAtTime(260, ctx.currentTime);
-      filter.Q.setValueAtTime(1.2, ctx.currentTime);
-
-      masterGain.connect(filter);
-      filter.connect(ctx.destination);
-
-      const frequencies = [110.00, 164.81, 196.00, 246.94];
-      const oscillators = [];
-
-      frequencies.forEach((freq, idx) => {
-        const osc = ctx.createOscillator();
-        osc.type = 'triangle';
-        osc.frequency.setValueAtTime(freq + (Math.random() - 0.5) * 1.2, ctx.currentTime);
-
-        const oscGain = ctx.createGain();
-        oscGain.gain.setValueAtTime(idx === 0 ? 0.35 : 0.2, ctx.currentTime);
-
-        const lfo = ctx.createOscillator();
-        lfo.type = 'sine';
-        lfo.frequency.setValueAtTime(0.06 + idx * 0.015, ctx.currentTime);
-        const lfoGain = ctx.createGain();
-        lfoGain.gain.setValueAtTime(0.08, ctx.currentTime);
-
-        lfo.connect(lfoGain);
-        lfoGain.connect(oscGain.gain);
-
-        lfo.start();
-        osc.connect(oscGain);
-        oscGain.connect(masterGain);
-        osc.start();
-
-        oscillators.push(osc);
-        oscillators.push(lfo);
-      });
-
-      const filterLfo = ctx.createOscillator();
-      filterLfo.type = 'sine';
-      filterLfo.frequency.setValueAtTime(0.04, ctx.currentTime);
-      const filterLfoGain = ctx.createGain();
-      filterLfoGain.gain.setValueAtTime(110, ctx.currentTime);
-
-      filterLfo.connect(filterLfoGain);
-      filterLfoGain.connect(filter.frequency);
-      filterLfo.start();
-      oscillators.push(filterLfo);
-
-      oscillatorsRef.current = oscillators;
-    } catch (err) {
-      console.warn("Web Audio API not supported / failed to load:", err);
-    }
-  };
-
-  const stopAmbientSynth = () => {
-    if (gainNodeRef.current && audioContextRef.current) {
-      const ctx = audioContextRef.current;
-      gainNodeRef.current.gain.linearRampToValueAtTime(0.0, ctx.currentTime + 0.5);
-      setTimeout(() => {
-        if (oscillatorsRef.current) {
-          oscillatorsRef.current.forEach(osc => {
-            try { osc.stop(); } catch(e){}
-          });
-        }
-        if (audioContextRef.current && audioContextRef.current.state !== 'closed') {
-          audioContextRef.current.close();
-        }
-        audioContextRef.current = null;
-        gainNodeRef.current = null;
-      }, 550);
-    }
-  };
-
-  const toggleAudio = () => {
-    if (isPlaying) {
-      stopAmbientSynth();
-      setIsPlaying(false);
-    } else {
-      playAmbientSynth();
-      setIsPlaying(true);
-    }
-  };
-
-  // Mute audio on component unmount
-  useEffect(() => {
-    return () => {
-      stopAmbientSynth();
-    };
-  }, []);
 
   // Sync initial theme on component load
   useEffect(() => {
@@ -253,30 +150,7 @@ export default function Navigation() {
           {theme === 'dark' ? <Sun size={15} /> : <Moon size={15} />}
         </button>
 
-        {/* Audio Toggle */}
-        <button
-          onClick={toggleAudio}
-          style={{
-            background: 'none',
-            border: 'none',
-            color: isPlaying ? 'var(--color-accent-cyan)' : 'var(--color-text)',
-            cursor: 'pointer',
-            padding: '0.4rem',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            borderRadius: '50%',
-            transition: 'color var(--transition-fast)'
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.color = 'var(--color-accent-cyan)';
-            playUiSound();
-          }}
-          onMouseLeave={(e) => (e.currentTarget.style.color = isPlaying ? 'var(--color-accent-cyan)' : 'var(--color-text)')}
-          title={isPlaying ? "Mute Background Music" : "Play Background Music"}
-        >
-          {isPlaying ? <Volume2 size={15} /> : <VolumeX size={15} />}
-        </button>
+
 
         {/* Resume Button */}
         <a
@@ -386,33 +260,7 @@ export default function Navigation() {
               )}
             </button>
 
-            <button
-              onClick={toggleAudio}
-              style={{
-                background: 'none',
-                border: 'none',
-                color: isPlaying ? 'var(--color-accent-cyan)' : 'var(--color-text)',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                fontFamily: 'var(--font-mono)',
-                fontSize: '0.72rem',
-                textTransform: 'uppercase'
-              }}
-            >
-              {isPlaying ? (
-                <>
-                  <Volume2 size={15} />
-                  <span>Audio On</span>
-                </>
-              ) : (
-                <>
-                  <VolumeX size={15} />
-                  <span>Audio Off</span>
-                </>
-              )}
-            </button>
+
 
             <a
               href={`${import.meta.env.BASE_URL}resume.pdf`}

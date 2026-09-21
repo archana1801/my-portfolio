@@ -1,6 +1,5 @@
 import React from 'react';
-import { Code2, Monitor, Database, BrainCircuit, Wrench, GraduationCap, Volume2 } from 'lucide-react';
-import { speakSection } from '../utils/speak';
+import { Code2, Monitor, Database, BrainCircuit, Wrench, GraduationCap } from 'lucide-react';
 
 export default function Skills() {
   const skillCategories = [
@@ -75,25 +74,7 @@ export default function Skills() {
     <section id="skills">
       <div className="section-header">
         <span className="mono-tag">// 04 // TECHNICAL SKILLS & SPECIALIZATIONS</span>
-        <button
-          onClick={() => speakSection("Section four: Skills matrix. Features specialized cores in frontend React, backend Python and Node, machine learning classification, and database structures.")}
-          style={{
-            background: 'none',
-            border: 'none',
-            color: 'var(--color-accent-cyan)',
-            cursor: 'pointer',
-            padding: '2px',
-            display: 'inline-flex',
-            alignItems: 'center',
-            opacity: 0.7,
-            transition: 'opacity 0.2s'
-          }}
-          onMouseEnter={(e) => e.currentTarget.style.opacity = 1}
-          onMouseLeave={(e) => e.currentTarget.style.opacity = 0.7}
-          title="Play voice summary"
-        >
-          <Volume2 size={13} />
-        </button>
+
         <div className="line" />
       </div>
 
