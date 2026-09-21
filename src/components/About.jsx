@@ -31,7 +31,7 @@ export default function About() {
               margin: 0
             }}
           >
-            Developing full-stack software with <span style={{ fontStyle: 'italic', color: 'var(--color-accent-cyan)' }}>clean code</span> and problem-solving focus.
+            Building web applications with <span style={{ fontStyle: 'italic', color: 'var(--color-accent-cyan)' }}>practical code</span> and strong computer science fundamentals.
           </h2>
           <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginTop: '0.5rem' }}>
             <span className="badge" style={{ fontSize: '0.65rem' }}>Software Developer</span>
