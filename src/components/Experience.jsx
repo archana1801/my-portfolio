@@ -3,20 +3,7 @@ import { Calendar, Briefcase, GraduationCap, ChevronRight } from 'lucide-react';
 
 export default function Experience() {
   const experiences = [
-    {
-      type: 'work',
-      role: 'Software Developer & AI Automation Intern',
-      institution: 'EximHub',
-      duration: '2026 – Present',
-      highlights: [
-        'Developed responsive web interfaces using React and Vite.',
-        'Built production-ready client websites and deployed using Hostinger.',
-        'Worked with AI-assisted email outreach workflows for lead generation.',
-        'Collaborated directly with clients to map business requirements to custom code.',
-        'Supported backend VPS setup and expanded knowledge of fullstack deployments.',
-        'Integrated tools such as Claude AI to increase dev productivity.'
-      ]
-    },
+
     {
       type: 'education',
       role: 'Master of Computer Applications (MCA)',

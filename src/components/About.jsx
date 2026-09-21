@@ -52,8 +52,7 @@ export default function About() {
               textAlign: 'justify'
             }}
           >
-            I am a Software Developer currently pursuing my Master of Computer Applications (MCA) at <strong>Indira Gandhi Delhi Technical University for Women (IGDTUW)</strong>. 
-            Alongside my academic journey, I work as a Software Developer Intern at <strong>EximHub</strong>, where I gain hands-on experience building user-friendly web interfaces and practical software solutions.
+            I am a Master of Computer Applications (MCA) student at <strong>Indira Gandhi Delhi Technical University for Women (IGDTUW)</strong>, focused on full-stack software development and problem solving.
           </p>
           <p
             style={{

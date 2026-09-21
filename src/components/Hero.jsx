@@ -91,21 +91,14 @@ export default function Hero() {
               style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', fontSize: '0.62rem' }}
             >
               <span className="glow-dot gold" style={{ width: '5px', height: '5px' }} />
-              <span>Intern @ EximHub</span>
-            </span>
-            <span
-              className="badge"
-              style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', fontSize: '0.62rem' }}
-            >
-              <span className="glow-dot" style={{ width: '5px', height: '5px' }} />
-              <span>MCA IGDTUW</span>
+              <span>MCA @ IGDTUW</span>
             </span>
           </div>
 
           {/* Heading */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
             <span className="mono-tag" style={{ fontSize: '0.65rem' }}>
-              // SOFTWARE_DEVELOPER
+              // MCA_STUDENT
             </span>
             <h1
               style={{
@@ -149,16 +142,16 @@ export default function Hero() {
               marginTop: '1.5rem'
             }}
           >
-            {/* Role & Company Grid */}
+            {/* Role & Institution Grid */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
               <div>
-                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.62rem', letterSpacing: '0.15em', textTransform: 'uppercase', opacity: 0.5 }}>Role</span>
-                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '1.0rem', fontWeight: 600, color: 'var(--color-text-header)', marginTop: '0.25rem' }}>Software Developer Intern</p>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.62rem', letterSpacing: '0.15em', textTransform: 'uppercase', opacity: 0.5 }}>Degree</span>
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '1.0rem', fontWeight: 600, color: 'var(--color-text-header)', marginTop: '0.25rem' }}>MCA Student</p>
               </div>
               <div>
-                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.62rem', letterSpacing: '0.15em', textTransform: 'uppercase', opacity: 0.5 }}>Company</span>
-                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '1.0rem', fontWeight: 600, color: 'var(--color-text-header)', marginTop: '0.25rem' }}>EximHub</p>
-                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', opacity: 0.6, marginTop: '0.1rem' }}>2026 – Present</p>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.62rem', letterSpacing: '0.15em', textTransform: 'uppercase', opacity: 0.5 }}>University</span>
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '1.0rem', fontWeight: 600, color: 'var(--color-text-header)', marginTop: '0.25rem' }}>IGDTUW</p>
+                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', opacity: 0.6, marginTop: '0.1rem' }}>2024 – 2026</p>
               </div>
             </div>
 
@@ -263,13 +256,13 @@ export default function Hero() {
                   width: '6px',
                   height: '6px',
                   borderRadius: '50%',
-                  backgroundColor: '#ef4444',
-                  boxShadow: '0 0 10px #ef4444'
+                  backgroundColor: '#10b981',
+                  boxShadow: '0 0 10px #10b981'
                 }}
                 className="glow-dot"
               />
               <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.58rem', letterSpacing: '0.12em', color: 'var(--color-text-header)' }}>
-                AUTOMATING: WORKFLOWS • NOT: CLICKS
+                FOCUS: FULL-STACK DEVELOPMENT & DSA
               </span>
             </div>
           </div>
@@ -277,21 +270,20 @@ export default function Hero() {
           {/* Action Call-to-Actions */}
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginTop: '0.75rem' }}>
             <button
-              onClick={() => scrollToSection('client-work')}
+              onClick={() => scrollToSection('engineering')}
               className="btn-primary"
               style={{ cursor: 'pointer' }}
             >
-              <span>Explore Internship Work</span>
+              <span>View Projects</span>
               <ArrowRight size={14} />
             </button>
             <button
-              onClick={() => scrollToSection('engineering')}
+              onClick={() => scrollToSection('contact')}
               className="btn-secondary"
               style={{ cursor: 'pointer' }}
             >
-              <span>Personal Projects</span>
+              <span>Contact Me</span>
             </button>
-
           </div>
         </div>
 
