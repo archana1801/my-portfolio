@@ -219,22 +219,7 @@ export default function Hero() {
                 <LinkedinIcon size={13} />
               </a>
 
-              <a
-                href={`${import.meta.env.BASE_URL}resume.pdf`}
-                download="Archana_Kumari_Resume.pdf"
-                className="btn-primary"
-                style={{
-                  padding: '0.45rem 1rem',
-                  fontSize: '0.65rem',
-                  letterSpacing: '0.08em',
-                  gap: '0.35rem',
-                  textDecoration: 'none',
-                  height: '32px'
-                }}
-              >
-                <Terminal size={11} />
-                <span>Download Resume</span>
-              </a>
+
             </div>
 
             {/* Glowing status badge bar */}

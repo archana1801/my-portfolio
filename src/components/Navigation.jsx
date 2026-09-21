@@ -152,22 +152,7 @@ export default function Navigation() {
 
 
 
-        {/* Resume Button */}
-        <a
-          href={`${import.meta.env.BASE_URL}resume.pdf`}
-          download="Archana_Kumari_Resume.pdf"
-          className="btn-primary"
-          style={{
-            padding: '0.45rem 1rem',
-            fontSize: '0.65rem',
-            letterSpacing: '0.1em',
-            gap: '0.35rem'
-          }}
-          onMouseEnter={playUiSound}
-        >
-          <ArrowDownToLine size={12} />
-          <span>Resume</span>
-        </a>
+
       </div>
 
       {/* Mobile Menu Icon */}
@@ -262,18 +247,7 @@ export default function Navigation() {
 
 
 
-            <a
-              href={`${import.meta.env.BASE_URL}resume.pdf`}
-              download="Archana_Kumari_Resume.pdf"
-              className="btn-primary"
-              style={{
-                padding: '0.45rem 1rem',
-                fontSize: '0.65rem'
-              }}
-            >
-              <ArrowDownToLine size={12} />
-              <span>Resume</span>
-            </a>
+
           </div>
         </div>
       )}
