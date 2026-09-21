@@ -31,7 +31,7 @@ export default function About() {
               margin: 0
             }}
           >
-            Building web applications with <span style={{ fontStyle: 'italic', color: 'var(--color-accent-cyan)' }}>practical code</span> and strong computer science fundamentals.
+            Building clean and reliable <span style={{ fontStyle: 'italic', color: 'var(--color-accent-cyan)' }}>web applications</span>.
           </h2>
           <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginTop: '0.5rem' }}>
             <span className="badge" style={{ fontSize: '0.65rem' }}>Software Developer</span>
