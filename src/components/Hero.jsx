@@ -151,7 +151,7 @@ export default function Hero() {
               <div>
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.62rem', letterSpacing: '0.15em', textTransform: 'uppercase', opacity: 0.5 }}>University</span>
                 <p style={{ fontFamily: 'var(--font-sans)', fontSize: '1.0rem', fontWeight: 600, color: 'var(--color-text-header)', marginTop: '0.25rem' }}>IGDTUW</p>
-                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', opacity: 0.6, marginTop: '0.1rem' }}>2024 – 2026</p>
+                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', opacity: 0.6, marginTop: '0.1rem' }}>2025 – 2027</p>
               </div>
             </div>
 
